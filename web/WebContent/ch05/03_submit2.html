@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ch05/03_submit</title>
+</head>
+<body id="bdy">
+    <script>
+        let h2Tag = document.createElement("h2");
+        let hText = document.createTextNode("입력 양식 데이터 전송 버튼");
+        h2Tag.appendChild(hText);
+        bdy = document.createElement("bdy");
+        bdy.appendChild(h2Tag);
+
+        let frm = document.createElement("form");
+        frm.setAttribute("Action", "page.jsp");
+        frm.setAttribute("method", "get");
+
+        let pTag = document.createElement("p");
+        let pText = document.createTextNode("이름 : ");
+        let inputTag = document.createElement("input");
+        inputTag.setAttribute("type", "text");
+        inputTag.setAttribute("name", "name");
+        pTag.appendChild(pText);
+        pTag.appendChild(inputTag);
+
+        frm = document.createElement("form");
+        frm.appendChild(pTag);
+
+        
+    </script>
+</body>
+</html>

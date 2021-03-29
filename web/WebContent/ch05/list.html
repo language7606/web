@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>Fruits
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Melon</li>
+    </ul>
+
+    <ul id="fruit"></ul>
+    <script>
+        let liTag = document.createElement("li"); //tag만들때
+        let text = document.createTextNode("Apple"); //텍스트값을 생성
+        liTag.appendChild(text) //<li>Apple</li>
+        let ulTag = document.getElementById("fruit");
+        ulTag.appendChild(liTag); // <ul><li>Apple</li></ul>
+        liTag = document.createElement("li");
+        text = document.createTextNode("Banana");
+        liTag.appendChild(text); //<li>Banana</li>
+        ulTag.appendChild(liTag); // <ul><li>Apple</li>
+                                  //     <li>Banana</li>
+                                  // </ul>
+        liTag = document.createElement("li");
+        text = document.createTextNode("Melon");
+        liTag.appendChild(text); //<li>Melon</li>
+        ulTag.appendChild(liTag); // <ul><li>Apple</li>
+                                  //     <li>Banana</li>
+                                  //     <li>Melon</li>
+                                  // </ul>
+
+        let btn = document.appendChild("button");
+
+        let inputTag = document.createElement("input");
+        inputTag.setAttribute("type", "password");
+        inputTag.setAttribute("name", "passwd");
+        <input type = "password" name = "passwd"></input>
+    </script>
+</body>
+</html>

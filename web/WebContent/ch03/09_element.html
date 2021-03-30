@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미리 정의된 태그</title>
+    <style>
+        * {
+            font-size: 12px;
+            color: blue;
+        }
+        major, 
+        department {
+            display: block;
+            font-size: 16px;
+            color: teal;
+        }
+    </style>
+</head>
+<body>
+    <!-- 정의된 태그 -->
+    <h1>문서의 제목</h1>
+    <a href="https://www.daum.net">DAUM</a>
+    <p/>
+    <span>span 영역</span>
+
+    <!-- 사용자 정의 태그 -->
+    <company style="display: block;">한빛아카데미
+        <department style="display: block; font-size: 16px; color: teal;">영업부</department>
+        <department style="display: block; font-size: 16px; color: thistle;">편집부
+            <team style="display: block; font-size: 12px; color: tomato;">그래픽팀</team>
+        </department>
+    </company>
+    <university style="display: block;"
+        location="https://www.daum.net" id="univ">한국대학교
+        <major>컴퓨터학과</major>
+        <major>경영정보학과</major>
+    </university>
+    <script>
+        let univ = document.getElementById('univ');
+        let loc = univ.getAttribute('location');
+        univ.onclick = function () {
+            location.href = loc;
+        }
+    </script>
+</body>
+</html>

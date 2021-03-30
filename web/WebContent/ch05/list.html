@@ -20,13 +20,13 @@
         liTag.appendChild(text) //<li>Apple</li>
         let ulTag = document.getElementById("fruit");
         ulTag.appendChild(liTag); // <ul><li>Apple</li></ul>
-        liTag = document.createElement("li");
+        
         text = document.createTextNode("Banana");
         liTag.appendChild(text); //<li>Banana</li>
         ulTag.appendChild(liTag); // <ul><li>Apple</li>
                                   //     <li>Banana</li>
                                   // </ul>
-        liTag = document.createElement("li");
+        
         text = document.createTextNode("Melon");
         liTag.appendChild(text); //<li>Melon</li>
         ulTag.appendChild(liTag); // <ul><li>Apple</li>

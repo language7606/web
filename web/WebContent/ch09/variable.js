@@ -7,13 +7,13 @@ num2 = '20.45';
 console.log(typeof num1);
 var result = parseFloat(num1) + parseFloat(num2);
 console.log(result);
-
+ 
 var num3 = null;
 num3 = {
     name: 'Hong',
     age: 20
 };
-
+ 
 console.log(typeof num3);
 console.log(typeof num3.name);
 console.log(num3.age);
@@ -49,7 +49,7 @@ for (var i = 1; i < 10; i++) {
     // 2 * 1 = 2
 }
 document.write('</table>');
-
+   
 
 
 console.log(parseInt(n1) + parseInt(n2));

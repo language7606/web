@@ -11,13 +11,13 @@ for(var i=0; i<fruit.length; i++){
 document.write('<li>'+fruit+'</li>');
 document.write('</ul>');
 
-
-
+ 
+ 
 console.log('1');
 
 var img1 = document.getElementById('img1');
 console.log(img1);
-
+   
 console.log('2');
 
 function turn_on() {

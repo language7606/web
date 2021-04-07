@@ -4,33 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <title>index.html</title>
-    <script src="javascript/basic.js"></script>
+    <!-- <script src="javascript/basic.js"></script>
     <script src="javascript/variable.js"></script>
-    <script src="javascript/operator.js"></script>
+    <script src="javascript/operator.js"></script> -->
+    <!-- <script src="javascript/object.js"></script> -->
+    <!-- <script src="javascript/class.js"></script> -->
+    <!-- <script src="javascript/object2.js"></script> -->
+    <!-- <script src="javascript/array.js"></script> -->
     <style>
-        div {
-            float: left;
-            width: 50px;
-            height: 50px;
-            background-color: yellow;
-        }
     </style>
 </head>
 
 <body>
-
     <div id='show'></div>
-    <p/>
-    <button id='btn' style="display: block;" onclick="changeColor()">Change Color</button>
-    </div>
+    <ul id="list"></ul>
+    <ul id="members"></ul>
+    <p />
+
     <script>
-        let colors = ['red', 'blue', 'green'];
+        var t = 'Hello Thank you good luck to you';
+        document.write(t.charAt(16),"<br/>");
+        document.write(t.indexOf("you"),"<br/>");
+        document.write(t.indexOf("you",16),"<br/>");
+        document.write(t.lastIndexOf("you"),"<br/>");
+        document.write(t.lastIndexOf("you",25),"<br/>");
+        document.write(t.match("luck"),"<br/>");
+        document.write(t.search("you"),"<br/>");
+        document.write(t.substr(21,4),"<br/>");
+        document.write(t.substring(6,12),"<br/>");
+        document.write(t.replace("you","me"),"<br/>");
+        document.write(t.toLowerCase(),"<br/>");
+        document.write(t.toUpperCase(),"<br/>");
+        document.write(t.length,"<br/>");
+        
+        var s = t.split(" ");
+        document.write(s[0],"<br/>");
+        document.write(s[4],"<br/>");
 
-        function changeColor(){
-            
-        }
+        var str = "A";
+        var t = str.charCodeAt(0);
+        document.write(t,"<br/>");
+        document.write(String.fromCharCode(65),"<br/>");
 
-
+        console.log(window)
     </script>
 </body>
 

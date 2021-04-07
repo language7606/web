@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calendar.html</title>
     <style>
-        *{
+        * {
             background-color: slategray;
             color: snow;
             border-color: black;
         }
+
         .pink {
             background-color: palevioletred;
         }
@@ -28,7 +29,6 @@
             background-color: skyblue;
         }
     </style>
-    <script src="javascript/cal.js"></script>
 </head>
 
 <body>
@@ -57,21 +57,22 @@
             }
             calendarTag += '<tr></tr>';
             for (let i = 0; i < firstDay; i++) {
-                calendarTag+='<td></td>';
+                calendarTag += '<td></td>';
             }
             for (let i = 1; i <= lastDate; i++) {
                 if (i % 7 == (7 - firstDay)) {
-                    calendarTag+='<td>' + i + '</td></tr><tr>';
+                    calendarTag += '<td>' + i + '</td></tr><tr>';
                 } else if (i == thisDate) {
-                    calendarTag+='<td style="background-color: yellow;">' + i + '</td>';
+                    calendarTag += '<td style="background-color: yellow;">' + i + '</td>';
                 } else {
-                    calendarTag+='<td>' + i + '</td>';
+                    calendarTag += '<td>' + i + '</td>';
                 }
             }
-            document.write('<h2 style="text-align:center">' + year + '년 '+ month + '월</h2>')
-            calendarTag+='</tr></table>';
+            document.write('<h2 style="text-align:center">' + year + '년 ' + month + '월</h2>')
+            calendarTag += '</tr></table>';
             document.write(calendarTag);
         }
     </script>
+</body>
 
 </html>

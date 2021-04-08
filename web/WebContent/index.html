@@ -11,42 +11,93 @@
     <!-- <script src="javascript/class.js"></script> -->
     <!-- <script src="javascript/object2.js"></script> -->
     <!-- <script src="javascript/array.js"></script> -->
+    <!-- <script src="javascript/string.js"></script> -->
+    <script src="javascript/function.js"></script>
     <style>
     </style>
 </head>
 
-<body>
-    <div id='show'></div>
+<body id='bdy'>
+    <div></div>
     <ul id="list"></ul>
     <ul id="members"></ul>
+    <table id="tbl" border="1"></table>
     <p />
-
+    <button onclick="changeColor()">색 변경하기</button>
     <script>
-        var t = 'Hello Thank you good luck to you';
-        document.write(t.charAt(16),"<br/>");
-        document.write(t.indexOf("you"),"<br/>");
-        document.write(t.indexOf("you",16),"<br/>");
-        document.write(t.lastIndexOf("you"),"<br/>");
-        document.write(t.lastIndexOf("you",25),"<br/>");
-        document.write(t.match("luck"),"<br/>");
-        document.write(t.search("you"),"<br/>");
-        document.write(t.substr(21,4),"<br/>");
-        document.write(t.substring(6,12),"<br/>");
-        document.write(t.replace("you","me"),"<br/>");
-        document.write(t.toLowerCase(),"<br/>");
-        document.write(t.toUpperCase(),"<br/>");
-        document.write(t.length,"<br/>");
-        
-        var s = t.split(" ");
-        document.write(s[0],"<br/>");
-        document.write(s[4],"<br/>");
+        let numbers = [15, 20, 21, 34, 44]
+        let sum = 0;
+        let list = document.getElementById('list');
+        numbers.forEach(function (a, b, c) {
+            sum += a;
+            let li = document.createElement('li');
+            let text = document.createTextNode(a);
+            li.appendChild(text);
+            list.appendChild(li);
+        });
+        console.log(sum);
 
-        var str = "A";
-        var t = str.charCodeAt(0);
-        document.write(t,"<br/>");
-        document.write(String.fromCharCode(65),"<br/>");
+        class Student {
+            constructor(sno,name, score){
+                this.sno = sno;
+                this.name = name;
+                this.score = score;
+            }
+        }
 
-        console.log(window)
+        let student = {
+            sno: '1111',
+            name: 'Hong',
+            score: 80
+        }
+
+        let students = [];
+        students.push(student);
+        students.push(new Student('2222', 'Hwang', 90));
+        students.push(new Student('3333', 'Park', 100));
+
+        // <tr><td>1111</td><td>Hong</td></tr>
+        function createTr(std) {
+            let trTag = document.createElement('tr');
+            trTag.onmouseover = function(){
+                this.style.backgroundColor = 'yellow';
+            }
+            trTag.onmouseout = function(){
+                this.style.backgroundColor = '';
+            }
+            let td = document.createElement('td');
+            let chk = document.createElement('input');
+            chk.setAttribute('type', 'checkbox');
+            td.appendChild(chk);
+            trTag.appendChild(td);
+
+            for (field in std) {
+                let tdTag = document.createElement('td');
+                let text = document.createTextNode(std[field]);
+                tdTag.appendChild(text);
+                trTag.appendChild(tdTag);
+            }
+            td = document.createElement('td');
+            let btn = document.createElement('button');
+            btn.innerHTML = 'OK';
+            btn.onclick = clickFnc;
+            td.appendChild(btn);
+            trTag.appendChild(td); 
+
+            return trTag;
+        }
+        let tbl = document.getElementById('tbl');
+
+        students.forEach(function (val, idx, ary) {
+            let newTr = createTr(val);
+            tbl.appendChild(newTr);
+        });
+
+        function clickFnc() {
+            console.log(this.parentNode.parentNode.children[1].innerHTML);
+            
+            window.alert(this.parentNode.parentNode.children[1].innerHTML);
+        }
     </script>
 </body>
 

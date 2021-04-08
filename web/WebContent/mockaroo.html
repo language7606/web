@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="tbl" border="1"></table>
+    <script>
+        // 선택 아이디 이름       성         이메일  성별    삭제
+        // check, id, first_name, last_name, email. gender, button
+        // check, id, first_name, last_name, email. gender, button
+        // check, id, first_name, last_name, email. gender, button
+        // check, id, first_name, last_name, email. gender, button
+        let title = {
+            id : "아이디",
+            first_name : "이름",
+            last_name : "성",
+            email: "이메일",
+            gender: "성별"
+        };
+        
+        let json = [{
+            id: 1,
+            first_name: "Karrie",
+            last_name: "Moorey",
+            email: "kmoorey0@cisco.com",
+            gender: "Male"
+        }, {
+            id: 2,
+            first_name: "Katie",
+            last_name: "Cripps",
+            email: "kcripps1@scientificamerican.com",
+            gender: "Female"
+        }, {
+            id: 3,
+            first_name: "Reeta",
+            last_name: "Blaxall",
+            email: "rblaxall2@xing.com",
+            gender: "Female"
+        }, {
+            id: 4,
+            first_name: "Jeniffer",
+            last_name: "Bason",
+            email: "jbason3@reddit.com",
+            gender: "Bigender"
+        }];
+
+        // <tr><td>1111</td><td>Hong</td></tr>
+        function createTr(std) {
+            let trTag = document.createElement('tr');
+            trTag.onmouseover = function(){
+                this.style.backgroundColor = 'yellow';
+            }
+            trTag.onmouseout = function(){
+                this.style.backgroundColor = '';
+            }
+            let td = document.createElement('td');
+            let chk = document.createElement('input');
+            chk.setAttribute('type', 'checkbox');
+            td.appendChild(chk);
+            trTag.appendChild(td);
+
+            for (field in std) {
+                let tdTag = document.createElement('td');
+                let text = document.createTextNode(std[field]);
+                tdTag.appendChild(text);
+                trTag.appendChild(tdTag);
+            }
+            td = document.createElement('td');
+            let btn = document.createElement('button');
+            btn.innerHTML = 'OK';
+            btn.onclick = clickFnc;
+            td.appendChild(btn);
+            trTag.appendChild(td); 
+
+            return trTag;
+        }
+        let tbl = document.getElementById('tbl');
+
+        json.forEach(function (val, idx, ary) {
+            let newTr = createTr(val);
+            tbl.appendChild(newTr);
+        });
+
+        function clickFnc() {
+            console.log(this.parentNode.parentNode.children[1].innerHTML);
+            
+            this.parentNode.parentNode.remove();
+        }
+
+    </script>
+</body>
+
+</html>

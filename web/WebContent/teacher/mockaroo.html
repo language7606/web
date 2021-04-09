@@ -11,8 +11,42 @@
 <body>
     <!-- <table id='tbl' border="1"></table> -->
     <script>
-        let json = '[{"id":1,"first_name":"Karrie","last_name":"Moorey","email":"kmoorey0@cisco.com","gender":"Male","ip_address":"88.23.167.149"},{"id":2,"first_name":"Katie","last_name":"Cripps","email":"kcripps1@scientificamerican.com","gender":"Female","ip_address":"89.108.69.150"},{"id":3,"first_name":"Reeta","last_name":"Blaxall","email":"rblaxall2@xing.com","gender":"Female","ip_address":"254.148.43.248"},{"id":4,"first_name":"Jeniffer","last_name":"Bason","email":"jbason3@reddit.com","gender":"Bigender","ip_address":"166.15.58.43"},{"id":5,"first_name":"Michell","last_name":"Speedin","email":"mspeedin4@amazonaws.com","gender":"Genderfluid","ip_address":"149.183.187.69"}]';
-        let jason = JSON.parse(json);
+        let json = [{
+            id: 1,
+            first_name: "Allianora",
+            last_name: "Howard",
+            email: "ahoward0@pcworld.com",
+            gender: "Female",
+            ip_address: "198.211.128.49"
+        }, {
+            id: 2,
+            first_name: "Peria",
+            last_name: "Triebner",
+            email: "ptriebner1@ameblo.jp",
+            gender: "Male",
+            ip_address: "143.119.76.243"
+        }, {
+            id: 3,
+            first_name: "Stafford",
+            last_name: "Drexel",
+            email: "sdrexel2@amazon.co.jp",
+            gender: "Male",
+            ip_address: "74.170.46.52"
+        }, {
+            id: 4,
+            first_name: "Sabrina",
+            last_name: "Dabbs",
+            email: "sdabbs3@mit.edu",
+            gender: "Female",
+            ip_address: "155.96.184.80"
+        }, {
+            id: 5,
+            first_name: "Nester",
+            last_name: "Foot",
+            email: "nfoote@theatlantic.com",
+            gender: "Agender",
+            ip_address: "143.77.216.80"
+        }];
 
         // 표시할 항목 관련 object.
         let titles = {
@@ -58,7 +92,7 @@
         btn.onclick = delSelected;
 
         // 데이터 항목.
-        for (data of jason) {
+        for (data of json) {
             tr = document.createElement('tr');
             // checkbox 생성.
             chkbox = document.createElement('input');
@@ -103,7 +137,7 @@
         function delSelected() {
             let checkedAll = document.querySelectorAll('td>input[type="checkbox"]:checked');
             console.log(checkedAll);
-            for (let i = 0; i < checkedAll.length; i++) {
+            for(let i = 0; i<checkedAll.length; i++){
                 checkedAll[i].parentNode.parentNode.remove();
             }
         }
